@@ -1,4 +1,4 @@
-# tmdb
+# TMDB
 ### React + Redux + Firebase + TMDB API.
 #### Live demo [Link1](https://tmdb-huynh.web.app/). [Link2](https://huynh12345678.github.io/TMDB/).
 #### Usage
