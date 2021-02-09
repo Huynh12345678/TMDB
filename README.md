@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-DEMO [Link](https://tmdb-huynh.web.app/).
+DEMO [Link1](https://tmdb-huynh.web.app/).[Link2](https://huynh12345678.github.io/TMDB/).
 
 ## Available Scripts
 
