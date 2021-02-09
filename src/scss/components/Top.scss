@@ -1,0 +1,60 @@
+//Top for Movie Results
+@import "../../css/variable";
+@import "../../css/mixin";
+@import "../../css/icon";
+
+#top-keyword {
+    background-image: radial-gradient(at 30% top, #073844 0%, rgba(3, 37, 65, 1) 70%);
+    .content {
+        background-position: center -250px;
+        .container {
+            display: flex;
+            max-width: $maxWidth;
+            padding: 20px 31px;
+            justify-content: space-between;
+            h3,
+            h4 {
+                margin: 0;
+                color: white;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@mixin responsiveSlide() {
+    #top-keyword {
+        .content {
+            .container {
+                padding: 20px 20px;
+            }
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsiveSlide();
+}
+
+@include responsive_375 {
+    @include responsiveSlide();
+}
+
+@include responsive_425 {
+    @include responsiveSlide();
+}
+
+@include responsive_768 {
+    @include responsiveSlide();
+}
+
+//desktop
+
+@include responsive_992 {
+}
+
+@include responsive_1024 {
+}
+
+@include responsive_1200 {
+}

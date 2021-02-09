@@ -1,0 +1,90 @@
+@import "./../../css/_variable";
+@import "./../../css/_mixin.scss";
+@import "./../../css/_icon.scss";
+
+.main {
+    .container {
+        max-width: $maxWidth;
+        padding: 15px 30px;
+        // padding-bottom: 0;
+        .row {
+            .text-left {
+                span {
+                    opacity: 0.6;
+                    font-weight: normal;
+                }
+                h3 {
+                    font-weight: 600;
+                    font-size: 1.4em;
+                    margin-bottom: 20px;
+                }
+
+                .root {
+                    display: flex;
+                    margin-bottom: 12px;
+                    margin-top: 10px;
+                    img {
+                        border-radius: 5px;
+                        margin-right: 20px;
+                    }
+                }
+                a,
+                h4 {
+                    color: black;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                h4 {
+                    font-size: 16px;
+                }
+                .wrapper {
+                    margin-left: 5px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    p {
+                        margin: 0;
+                    }
+                }
+                .job {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+@mixin responsive() {
+    .main {
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 0;
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsive();
+}
+
+@include responsive_375 {
+    @include responsive();
+}
+
+@include responsive_425 {
+    @include responsive();
+}
+
+@include responsive_768 {
+    @include responsive();
+}
+
+//desktop
+
+@include responsive_992 {
+}
+
+@include responsive_1024 {
+}
+
+@include responsive_1200 {
+}

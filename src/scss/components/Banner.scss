@@ -1,0 +1,199 @@
+@import "../../css/variable";
+@import "../../css/mixin";
+
+.banner.container {
+    color: white;
+    // background-image: linear-gradient(to right, rgba(6, 52, 64, 0.8), rgba(20, 40, 81, 0.8)),
+    //     url("//image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/ghQrKrcEpAlkzBuNoOCSxHQXWqw.jpg");
+    background-size: cover;
+    max-width: $maxWidth2;
+    min-height: 300px;
+    height: calc(100vh / 2.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .slogan {
+        margin-left: 40px;
+        margin-bottom: 35px;
+        h2 {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 1;
+        }
+        h3 {
+            font-size: 2em;
+            font-weight: 600;
+        }
+    }
+    .search {
+        margin: 10px auto;
+        width: 100%;
+        input {
+            border-radius: 40px;
+            font-size: 1.1em;
+            color: rgba(0, 0, 0, 0.5);
+            padding: 21px 20px;
+        }
+        .submit {
+            position: absolute;
+            right: -1px;
+            height: 102%;
+            border-radius: none;
+            border-radius: 40px;
+            background: linear-gradient(to right, rgba(var(--lightGreen), 1) 0%, rgba(var(--lightBlue), 1) 100%);
+            width: 100px;
+            color: white;
+            z-index: 999;
+            font-weight: 700;
+            outline: none;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+    h5 {
+        position: absolute;
+        margin-left: 35px;
+        top: 310px;
+        left: 130px;
+        font-size: 18px;
+    }
+}
+
+.banner.container.s2 {
+    background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces_filter(duotone,190235,ad47dd)/lMnoYqPIAVL0YaLP5YjRy7iwaYv.jpg");
+    background-position: center;
+    height: auto;
+    .row {
+        .col-md-7 {
+            h2 {
+                font-size: 2em;
+                font-weight: 700;
+            }
+            p {
+                font-size: 1.1em;
+            }
+        }
+        .col-md-5 {
+            ul {
+                li {
+                    padding-right: 0;
+                    padding-left: 0;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@mixin responsiveSlide() {
+    .banner.container {
+        min-height: 216px;
+        height: calc(76vh / 2.4);
+        .slogan {
+            margin-left: 8px;
+            margin-bottom: 0px;
+            h2 {
+                margin-bottom: 30px;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+        }
+        .search {
+            margin: 10px auto;
+            input {
+                padding: 20px 20px;
+            }
+        }
+        h5 {
+            position: relative;
+            margin-left: 7px;
+        }
+    }
+    .banner.container.s2 {
+        .row {
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsiveSlide();
+    .banner.container .search {
+        width: 95%;
+        input {
+            border-radius: 2px;
+        }
+        .submit {
+            display: none;
+        }
+    }
+    .banner.container .slogan {
+        margin-bottom: 10px;
+    }
+}
+
+@include responsive_375 {
+    @include responsiveSlide();
+    .banner.container .search {
+        width: 95.6%;
+        input {
+            border-radius: 2px;
+        }
+        .submit {
+            display: none;
+        }
+    }
+}
+
+@include responsive_425 {
+    @include responsiveSlide();
+}
+
+@include responsive_768 {
+    @include responsiveSlide();
+    .banner.container .slogan {
+        // margin-bottom: 35px;
+    }
+    .banner.container {
+        height: calc(76vh / 3.4);
+    }
+}
+
+//desktop
+
+@include responsive_992 {
+    .banner.container {
+        .slogan {
+            margin-left: 21px;
+            // margin-bottom: 0;
+        }
+        .search {
+            width: 96%;
+        }
+    }
+}
+
+@include responsive_1024 {
+    .banner.container {
+        height: calc(76vh / 4.4);
+        .slogan {
+            margin-left: 21px;
+            // margin-bottom: 50px;
+        }
+        .search {
+            width: 96%;
+        }
+    }
+}
+
+@include responsive_1200 {
+    .banner.container {
+        .slogan {
+            margin-left: 35px;
+        }
+        .search {
+            width: 95%;
+        }
+    }
+}

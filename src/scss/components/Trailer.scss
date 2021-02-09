@@ -1,0 +1,123 @@
+@import "../../css/variable";
+@import "../../css/mixin";
+@import "node_modules/react-modal-video/scss/modal-video.scss"; //ko có thì lỗi ngay, import 1 lần rồi thôi
+
+.trailer.container {
+    max-width: $maxWidth2;
+    padding: 10px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // min-height: 400px;
+    align-items: center;
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+            max-width: 300px;
+            touch-action: pan-y;
+            text-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            // margin-bottom: 20px;
+            img {
+                border-radius: $imgBorderRadius;
+                transition: all 0.2s ease-in-out;
+            }
+            .play_icon {
+                width: 66px;
+                height: 66px;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.06);
+                }
+                .play_icon {
+                    transform: scale(1.35);
+                }
+            }
+            .wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 185px;
+            }
+            .info {
+                font-weight: 600;
+                font-size: 1.2em;
+                p {
+                    margin-top: -4px;
+                    font-weight: normal;
+                    font-size: 16px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+@mixin responsiveSlide() {
+    .trailer.container {
+        .swiper-container .swiper-slide {
+            left: 22px;
+            img {
+                border-radius: $imgBorderRadiusMobile;
+            }
+            &:hover {
+                img {
+                    transform: unset;
+                }
+                .play_icon {
+                    transform: unset;
+                }
+            }
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsiveSlide();
+}
+
+@include responsive_375 {
+    @include responsiveSlide();
+}
+
+@include responsive_425 {
+    @include responsiveSlide();
+}
+
+@include responsive_768 {
+    @include responsiveSlide();
+}
+
+//desktop
+
+@include responsive_992 {
+    .trailer.container .swiper-container .swiper-slide {
+        left: 37px;
+    }
+}
+
+@include responsive_1024 {
+    .trailer.container .swiper-container .swiper-slide {
+        left: 37px;
+    }
+}
+
+@include responsive_1200 {
+    .trailer.container .swiper-container .swiper-slide {
+        left: 47px;
+    }
+}

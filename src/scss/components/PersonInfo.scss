@@ -1,0 +1,270 @@
+@import "./../../css/variable";
+@import "./../../css/mixin";
+@import "./../../css/icon";
+
+.person {
+    .container {
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        max-width: $maxWidth;
+        padding: 25px 45px;
+        .row {
+            .col-md-3 {
+                // background-color: red;
+                .row {
+                    .col-12 {
+                        padding: 0;
+                        img {
+                            border-radius: 8px;
+                            background-color: #dbdbdb;
+                        }
+                        h3 {
+                            font-weight: 600;
+                            font-size: 1.3em;
+                            margin-bottom: 8px;
+                        }
+                        strong {
+                            display: block;
+                            font-weight: 600;
+                        }
+                        .text-left {
+                            margin-top: 10px;
+                            .links {
+                                span {
+                                    &:first-child {
+                                        margin-left: 0px;
+                                    }
+                                    width: 30.4px;
+                                    height: 30.4px;
+                                    display: flex;
+                                    margin: 15px 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .col-md-9 {
+                padding-left: 2rem !important;
+                padding-right: 1px;
+                .details {
+                    h2 {
+                        a {
+                            font-size: 35.2px;
+                            font-weight: 700;
+                        }
+                    }
+                    h3 {
+                        font-weight: 600;
+                        font-size: 1.3em;
+                        margin-bottom: 8px;
+                    }
+                    p {
+                        line-height: 22px;
+                    }
+                    .biography,
+                    .knowFor {
+                        margin-top: 30px;
+                        .swiper-container {
+                            .swiper-wrapper {
+                                .swiper-slide {
+                                    max-width: 130px;
+                                    touch-action: pan-y;
+                                    img {
+                                        height: 195px;
+                                        width: 100%;
+                                        border-radius: $imgBorderRadius;
+                                        background-color: #dbdbdb;
+                                    }
+                                    a {
+                                        p {
+                                            padding-top: 4px;
+                                            font-size: 14.4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .knowFor {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            width: 60px;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+                            z-index: 999;
+                            will-change: opacity;
+                            pointer-events: none;
+                        }
+                    }
+                    .content {
+                        letter-spacing: -0.1px;
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                    .common {
+                        margin-bottom: 30px;
+                        table.card {
+                            margin-top: 10px;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                            border: 1px solid rgba(227, 227, 227, 1);
+                            background-color: #fff;
+                            tbody {
+                                .list {
+                                    width: 100%;
+                                    display: table;
+                                    border-spacing: 0;
+                                    border-collapse: collapse;
+                                    border-bottom: 1px solid #dedede;
+                                    &:last-child {
+                                        border-bottom: none;
+                                    }
+                                    td {
+                                        padding: 10px 0 10px 0;
+                                        tr {
+                                            td {
+                                                padding: 8px 16px;
+                                                // vertical-align: middle;
+                                            }
+                                            .year {
+                                                width: 67.2px;
+                                                font-weight: 400;
+                                                text-align: center;
+                                                color: black;
+                                            }
+                                            .seperator {
+                                                padding-top: 10px;
+                                                padding-right: 0;
+                                                padding-left: 0;
+                                                span {
+                                                    display: flex;
+                                                    min-height: 1em;
+                                                    min-width: 1em;
+                                                }
+                                            }
+                                            .role {
+                                                color: rgba(0, 0, 0, 0.8);
+                                                a {
+                                                    color: #000;
+                                                    font-weight: 600;
+                                                }
+                                                span.group {
+                                                    color: rgba(0, 0, 0, 0.5);
+                                                    font-weight: 400;
+                                                    span {
+                                                        color: rgba(0, 0, 0, 0.8);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .select {
+                        width: 150px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            right: 1px;
+                            position: absolute;
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin responsive() {
+    .person {
+        .container {
+            padding: 25px 20px;
+            .row {
+                .col-md-3 {
+                    .row {
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        // padding-top: 20px;
+
+                        .col-12 {
+                            img {
+                                max-width: 200px;
+                                height: auto;
+                            }
+                            .text-left {
+                                margin-top: 10px;
+                                .links {
+                                    span {
+                                        margin: 8px 5px;
+                                        width: 30.4px;
+                                        height: 30.4px;
+                                        display: flex;
+                                        &:first-child {
+                                            margin-left: 5px;
+                                        }
+                                    }
+                                }
+                                h2.text-center {
+                                    margin-bottom: 0rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-md-9 {
+                    padding-left: 15px !important;
+                    padding-right: 15px;
+                    .details {
+                        h2 {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsive();
+}
+
+@include responsive_375 {
+    @include responsive();
+}
+
+@include responsive_425 {
+    @include responsive();
+}
+
+@include responsive_768 {
+    @include responsive();
+    .person .container .row .col-md-9 {
+        padding-left: 2rem !important;
+    }
+}
+
+//desktop
+
+@include responsive_992 {
+}
+
+@include responsive_1024 {
+}
+
+@include responsive_1200 {
+}

@@ -1,0 +1,87 @@
+//dùng cho thằng Home.js in pages
+@import "./variable";
+
+.container {
+    max-width: $maxWidth;
+    h2 {
+        font-size: 1.5em;
+        margin: 0 0 4px 0;
+        font-weight: 600;
+    }
+}
+
+//ul,li only for trailer
+:root {
+    --lighterGreen: 192, 254, 207;
+    --lightGreen: 30, 213, 169;
+    --darkBlue: 3, 37, 65;
+    --lightBlue: 1, 180, 228;
+}
+$colorBorder: 1px solid rgba(var(--lightGreen), 1);
+$background: linear-gradient(to right, rgba(var(--lighterGreen), 1) 0%, rgba(var(--lightGreen), 1) 100%);
+#trailer {
+    max-width: $maxWidth2;
+    color: white;
+    position: relative;
+    &::after {
+        content: "";
+        width: 60px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+        z-index: 999;
+        will-change: opacity;
+        pointer-events: none;
+    }
+    ul {
+        li {
+            height: 90%;
+            padding-left: 15px;
+            padding-right: 15px;
+            span {
+                font-weight: 600;
+                line-height: 1.5;
+                vertical-align: middle;
+            }
+        }
+        li.s1 {
+            border: $colorBorder;
+            border-right: none;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        li.s2 {
+            border-top: $colorBorder;
+            border-bottom: $colorBorder;
+            border-radius: 0px;
+            border-right: none;
+        }
+        li.s3 {
+            border-top: $colorBorder;
+            border-right: $colorBorder;
+            border-bottom: $colorBorder;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        li.on {
+            background: $background;
+            span {
+                background-clip: text;
+                background: #142851;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    .choose.container {
+        margin-top: 0px !important;
+        padding: 30px 0px 0px;
+    }
+}
+@media screen and (max-width: 992px) {
+    #top_rated {
+        margin-top: 0px !important;
+    }
+}

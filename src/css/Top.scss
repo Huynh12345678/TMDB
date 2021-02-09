@@ -1,0 +1,100 @@
+//Top for Movie
+@import "./_variable";
+@import "./_mixin.scss";
+@import "./_icon.scss";
+
+.top {
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    background-color: #261917;
+    .container {
+        color: white;
+        max-width: $maxWidth;
+        padding: 15px 30px;
+        .header {
+            display: flex;
+            align-items: center;
+            img {
+                object-fit: cover;
+            }
+            .ahihi {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-weight: 600;
+                margin: auto 25px;
+                h4 {
+                    font-size: 35.2px;
+                    margin-bottom: 0px;
+                    a {
+                        font-weight: 700;
+                    }
+                    span {
+                        color: white;
+                    }
+                }
+                h3 {
+                    display: flex;
+                    align-items: center;
+                    a {
+                        opacity: 0.6;
+                        font-size: 17.6px;
+                        color: white;
+                    }
+                }
+                h2,
+                h3 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@mixin responsive() {
+    .top {
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            .header {
+                .ahihi {
+                    h4 {
+                        font-size: 25.6px;
+                    }
+                    span {
+                        font-size: 20.48px;
+                    }
+                }
+            }
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsive();
+}
+
+@include responsive_375 {
+    @include responsive();
+}
+
+@include responsive_425 {
+    @include responsive();
+}
+
+@include responsive_768 {
+    @include responsive();
+}
+
+//desktop
+
+@include responsive_992 {
+}
+
+@include responsive_1024 {
+}
+
+@include responsive_1200 {
+}

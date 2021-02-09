@@ -1,0 +1,253 @@
+@import "./../../css/variable";
+@import "./../../css/mixin";
+
+header {
+    //responsive mobile
+    @mixin container() {
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Important styles */
+        #toggle {
+            display: block;
+            width: 28px;
+            height: 36px;
+            transform: scale(0.7);
+        }
+        #toggleUser {
+            display: block;
+            padding-right: 1px;
+        }
+
+        #toggle span:after,
+        #toggle span:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -9px;
+        }
+        #toggle span:after {
+            top: 9px;
+        }
+        #toggle span {
+            position: relative;
+            display: block;
+            top: 52%;
+        }
+
+        #toggle span,
+        #toggle span:after,
+        #toggle span:before {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transition: all 0.3s;
+            backface-visibility: hidden;
+            border-radius: 2px;
+        }
+        #toggle span {
+        }
+
+        /* on activation */
+        #toggle.on span {
+            background-color: transparent;
+        }
+        #toggle.on span:before {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        #toggle.on span:after {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+        #toggle.on + #menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        // #toggleUser.nav-link.on + #menuUser {
+        //     opacity: 1;
+        //     visibility: visible;
+        // }
+        #toggleUser.on + #menuUser {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        justify-content: space-between;
+        nav.nav1 {
+            div {
+                .sm {
+                    display: none;
+                }
+            }
+        }
+        nav.nav2 {
+            div {
+                .sm {
+                    display: none;
+                }
+            }
+        }
+        #search {
+            padding-right: 0px;
+        }
+    }
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: $colorMain;
+    // box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    //     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    .container {
+        justify-content: space-between;
+        max-width: $maxWidth;
+        #toggle {
+            display: none;
+            margin-left: 4px;
+        }
+        #toggleUser {
+            display: none;
+        }
+        #search {
+            padding-right: 19px;
+        }
+        nav {
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                color: white;
+            }
+        }
+        /* menu appearance*/
+        #menu,
+        #menuUser {
+            left: 8.5px;
+            z-index: 999;
+            top: 67px;
+            position: absolute;
+            color: #999;
+            width: 105px;
+            padding: 10px;
+            margin: auto;
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans",
+                "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            text-align: center;
+            border-radius: 4px;
+            background: white;
+            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+            /* just for this demo */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s;
+        }
+        #menuUser {
+            left: unset;
+            right: 6px;
+        }
+
+        #menu:after,
+        #menuUser:after {
+            // left: 2px;
+            position: absolute;
+            top: -15px;
+            content: "";
+            display: block;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 20px solid white;
+        }
+        #menuUser:after {
+            left: 16px;
+        }
+        ul,
+        li,
+        li a {
+            list-style: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-weight: unset;
+        }
+        li a {
+            text-align: start;
+            padding: 5px;
+            padding-left: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 1.01em;
+        }
+        #sidebarMenu {
+            height: 100%;
+            position: fixed;
+            top: 1.9px;
+            left: 0;
+            width: 370px;
+            margin-top: 60px;
+            transform: translateX(-375px);
+            transition: ease 0.3s;
+            background: rgba(var(--darkBlue), 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            ul {
+                padding: 19px 24px;
+                li {
+                    padding: 0px 0px 10px;
+                    &:nth-child(3) {
+                        padding: 0px;
+                    }
+                    a {
+                        padding: 0px;
+                        color: white;
+                        font-weight: 600;
+                        font-size: 1.3em;
+                    }
+                    a.more {
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 1.1em;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+        #sidebarMenu.click {
+            transform: translateX(0px);
+        }
+    }
+    //mobile
+    @include responsive_320 {
+        .container {
+            @include container();
+        }
+    }
+
+    @include responsive_375 {
+        .container {
+            @include container();
+        }
+    }
+
+    @include responsive_425 {
+        .container {
+            @include container();
+        }
+    }
+
+    @include responsive_768 {
+        .container {
+            @include container();
+        }
+    }
+
+    //desktop
+
+    @include responsive_992 {
+    }
+
+    @include responsive_1024 {
+    }
+
+    @include responsive_1200 {
+    }
+}

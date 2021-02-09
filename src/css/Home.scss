@@ -1,0 +1,38 @@
+//for Home pages
+@import "./../css/variable";
+@import "./../css/mixin";
+
+//ul,li
+ul.ul_home {
+    li {
+        height: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
+        span {
+            font-weight: 600;
+            line-height: 1.5;
+            vertical-align: middle;
+        }
+    }
+    li.s1 {
+        border: 1px solid;
+        border-right: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    li.s2 {
+        border: 1px solid;
+        border-left: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    li.on {
+        background-color: #142851;
+        span {
+            background-clip: text;
+            background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}

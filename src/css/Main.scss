@@ -1,0 +1,103 @@
+//for movie list
+@import "./variable";
+@import "./mixin";
+@import "./icon";
+
+#main {
+    .container {
+        min-height: 50vh;
+        max-width: $maxWidth;
+        padding: 20px 31px;
+        .movie_list {
+            .movie {
+                // box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+                //     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(227, 227, 227, 1);
+                margin-bottom: 20px;
+                display: flex;
+                overflow: hidden;
+                border-radius: $imgBorderRadius;
+                img {
+                    background-color: #dbdbdb;
+                    width: 94px;
+                    height: 141px;
+                }
+                .root {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 141px;
+                    width: 100%;
+                    padding: 10px 15px;
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        .title {
+                            margin-bottom: 0;
+                            font-size: 19.2px;
+                            font-weight: 700;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 1;
+                            line-height: 1.5;
+                        }
+                    }
+                    .date {
+                        color: #999;
+                        margin: 0;
+                    }
+                    .overview {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin responsiveSlide() {
+    #main {
+        .container {
+            padding: 20px 18px;
+            .movie_list {
+                .movie {
+                    border-radius: $imgBorderRadiusMobile;
+                }
+            }
+        }
+    }
+}
+//mobile
+@include responsive_320 {
+    @include responsiveSlide();
+}
+
+@include responsive_375 {
+    @include responsiveSlide();
+}
+
+@include responsive_425 {
+    @include responsiveSlide();
+}
+
+@include responsive_768 {
+    @include responsiveSlide();
+}
+
+//desktop
+
+@include responsive_992 {
+}
+
+@include responsive_1024 {
+}
+
+@include responsive_1200 {
+}
