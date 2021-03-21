@@ -1,5 +1,5 @@
 # TMDB
-### React + Redux + Firebase + TMDB API.
+### MERN Stack.
 #### Live demo [Demo](https://tmdb-huynh.cf/).
 #### Usage
 1. `npm i`
